@@ -96,6 +96,20 @@ class  StrUtil {
 	static strDencode(source){
 		return decodeURIComponent(source);
 	}
+	/**
+	 * 文本转换成数字
+	 *
+	 * @param {String} str 字符串
+	 * @return {Number} 数字
+	 */
+	static convert(str)
+    	{
+		var arr = ["一","二","三","四","五","六","七","八","九","十"];
+		for (var i = 0; i < arr.length; i++) {
+		    str = str.replace(new RegExp(arr[i], "g"), (i+1));
+		}
+		return str;
+    	}
 	
 	
 }; 
