@@ -169,3 +169,41 @@ export const  pad=(num, n)=>{
 	}
 	return num;
 }
+
+let elementStyle = document.createElement('div').style
+
+let vendor = (() => {
+  let transformNames = {
+    webkit: 'webkitTransform',
+    Moz: 'MozTransform',
+    O: 'OTransform',
+    ms: 'msTransform',
+    standard: 'transform'
+  }
+
+  for (let key in transformNames) {
+    if (elementStyle[transformNames[key]] !== undefined) {
+      return key
+    }
+  }
+
+  return false
+})()
+
+/**
+ * 添加浏览器内核前缀
+ * @param {String} style 要添加的css样式
+ * @return {String} 添加内核前缀的css样式
+ */ 
+export function prefixStyle(style) {
+    console.log(vendor);
+  if (vendor === false) {
+    return false
+  }
+
+  if (vendor === 'standard') {
+    return style
+  }
+
+  return vendor + style.charAt(0).toUpperCase() + style.substr(1)
+}
