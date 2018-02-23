@@ -207,3 +207,12 @@ export function prefixStyle(style) {
 
   return vendor + style.charAt(0).toUpperCase() + style.substr(1)
 }
+/**
+ * 获取范围内的随机数
+ * @param {Number} min 最小值
+ * @param {Number} max 最大值
+ * @return {Number} 范围内的随机数
+ */ 
+export	function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
