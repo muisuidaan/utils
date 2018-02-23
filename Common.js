@@ -195,8 +195,7 @@ let vendor = (() => {
  * @param {String} style 要添加的css样式
  * @return {String} 添加内核前缀的css样式
  */ 
-export function prefixStyle(style) {
-    console.log(vendor);
+export prefixStyle(style)=>{
   if (vendor === false) {
     return false
   }
@@ -213,6 +212,6 @@ export function prefixStyle(style) {
  * @param {Number} max 最大值
  * @return {Number} 范围内的随机数
  */ 
-export	function getRandomInt(min, max) {
+export getRandomInt(min, max)=> {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
