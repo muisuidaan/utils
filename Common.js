@@ -215,3 +215,18 @@ export prefixStyle(style)=>{
 export getRandomInt(min, max)=> {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+/**
+ *  不修改原数组的前提下对数组进行随机打乱
+ * @param {Array} arr 数组
+ * @return {Array} 随机打乱后的数组
+ */ 
+export shuffle(arr)=> {
+  let _arr = arr.slice()
+  for (let i = 0; i < _arr.length; i++) {
+    let j = getRandomInt(0, i)
+    let t = _arr[i]
+    _arr[i] = _arr[j]
+    _arr[j] = t
+  }
+  return _arr
+}
